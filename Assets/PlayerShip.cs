@@ -16,6 +16,7 @@ public class PlayerShip : MonoBehaviour
         
     }
 
+   
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -46,4 +47,11 @@ public class PlayerShip : MonoBehaviour
         Vector3 moveDirection = transform.forward * moveAmountThisFrame;
         _rb.AddForce(moveDirection);
     }
+
+    public void Kill()
+    {
+        Debug.Log("Ship Gone");
+        this.gameObject.SetActive(false);
+    }
+
 }
